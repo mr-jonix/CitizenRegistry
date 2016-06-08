@@ -14,6 +14,10 @@ namespace Citizens
         private string lastName;
         private string vatID;
 
+        public Citizen()
+        {
+        }
+
         public Citizen(string firstName, string lastName, DateTime dateOfBirth, Gender gender)
         {
             if ((int)gender > Enum.GetNames(typeof(Gender)).Length - 1)
@@ -91,5 +95,11 @@ namespace Citizens
                 vatID = value;
             }
         }
+
+        public void AssignVatID()
+        {
+
+        }
+
     }
 }

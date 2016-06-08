@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CitizenRegistry.cs" />
     <Compile Include="Citizen.cs" />
+    <Compile Include="VatNumberAssigner.cs" />
     <Compile Include="Recapitalizer.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="ICitizen.cs" />
