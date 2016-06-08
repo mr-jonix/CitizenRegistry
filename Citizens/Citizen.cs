@@ -20,10 +20,15 @@ namespace Citizens
             {
                 throw new ArgumentOutOfRangeException("Gender parameter is out of allowed range");
             }
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.dateOfBirth = dateOfBirth;
-            this.gender = gender;
+            if (DateTime.Compare(dateOfBirth, SystemDateTime.Now()) > 0)
+            {
+                throw new ArgumentException("Birth date cannot be set to a future date");
+            }
+
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDate = dateOfBirth.Date;
+            Gender = gender;
         }
 
         public DateTime BirthDate
@@ -34,7 +39,7 @@ namespace Citizens
             }
             set
             {
-                dateOfBirth = value;
+                    dateOfBirth = value;
             }
         }
 
@@ -46,7 +51,7 @@ namespace Citizens
             }
             set
             {
-                firstName = value;
+                firstName = Recapitalizer.RecapitalizeName(value);
             }
         }
 
@@ -70,7 +75,7 @@ namespace Citizens
             }
             set
             {
-                lastName = value;
+                lastName = Recapitalizer.RecapitalizeName(value);
             }
         }
 
