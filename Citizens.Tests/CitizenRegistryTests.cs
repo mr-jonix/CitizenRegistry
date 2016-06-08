@@ -21,17 +21,17 @@
             registry = CreateCitizenRegistry();
         }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(InvalidOperationException))]
-        //public void Register_ForAlreadyRegisteredVatId_ThrowsInvalidOperationException()
-        //{
-        //    string vatId = TestVatIdForMan;
-        //    var citizen1 = CitizenBuilder.NewMan().WithVatId(vatId).Build();
-        //    var citizen2 = CitizenBuilder.NewMan().WithVatId(vatId).Build();
-        //    registry.Register(citizen1);
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Register_ForAlreadyRegisteredVatId_ThrowsInvalidOperationException()
+        {
+            string vatId = TestVatIdForMan;
+            var citizen1 = CitizenBuilder.NewMan().WithVatId(vatId).Build();
+            var citizen2 = CitizenBuilder.NewMan().WithVatId(vatId).Build();
+            registry.Register(citizen1);
 
-        //    registry.Register(citizen2);
-        //}
+            registry.Register(citizen2);
+        }
 
         //[TestMethod]
         //public void Register_ForCitizenWithEmptyVatId_AssignsVatId()
@@ -166,7 +166,7 @@
         private ICitizenRegistry CreateCitizenRegistry()
         {
             // TODO: return new instance of class that implements ICitizenRegistry
-            return default(ICitizenRegistry);
+            return new CitizenRegistry();
         }
     }
 }

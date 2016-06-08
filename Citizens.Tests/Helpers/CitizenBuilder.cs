@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Citizens;
+using System;
 
 namespace Citizens.Tests.Helpers
 {

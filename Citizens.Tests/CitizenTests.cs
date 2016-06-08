@@ -1,17 +1,18 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Citizens.Tests.Helpers;
 
 namespace Citizens.Tests
 {
     [TestClass]
     public class CitizenTests: TestsBase
     {
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentOutOfRangeException))]
-        //public void Constructor_WithInvalidGender_ThrowsArgumentOutOfRangeException()
-        //{
-        //    var citizen = new Citizen("Roger", "Pierce", SystemDateTime.Now(), (Gender)2);
-        //}
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Constructor_WithInvalidGender_ThrowsArgumentOutOfRangeException()
+        {
+            var citizen = new Citizen("Roger", "Pierce", SystemDateTime.Now(), (Gender)2);
+        }
 
         //[TestMethod]
         //public void Constructor_WithInvalidNameCasing_CorrectsNameToLowerCaseWithCapital()

@@ -52,9 +52,16 @@
   <ItemGroup>
     <Compile Include="CitizenRegistryTests.cs" />
     <Compile Include="CitizenTests.cs" />
+    <Compile Include="Helpers\Citizen.cs" />
     <Compile Include="Helpers\CitizenBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestsBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Citizens\Citizens.csproj">
+      <Project>{FA38118B-A90D-43BB-A892-142953508F0D}</Project>
+      <Name>Citizens</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
